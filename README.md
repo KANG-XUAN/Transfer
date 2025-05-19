@@ -1,2 +1,2 @@
-# test
-轉移資料使用
+# CHU
+Chien Hsin University
