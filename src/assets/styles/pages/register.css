@@ -71,7 +71,7 @@
 }
 
 .active-step {
-	display: block;
+	display: block !important;
 }
 
 /* 輸入區塊】 */

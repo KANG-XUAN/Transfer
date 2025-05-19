@@ -10,19 +10,21 @@
 	</div>
 </template>
 
-<script setup>
-defineProps({
-	id: String,
-	label: String,
-	type: {
-		type: String,
-		default: 'text'
-	},
-	placeholder: String,
-	modelValue: String,
-	quote: String	// 預設提示
-	errorMessage: String // 錯誤訊息（可選）
-});
+<script>
+export default {
+  props: {
+    id: String,
+    label: String,
+    type: {
+      type: String,
+      default: 'text'
+    },
+    placeholder: String,
+    modelValue: String,
+    quote: String,
+    errorMessage: String
+  },
+};
 </script>
 
 
