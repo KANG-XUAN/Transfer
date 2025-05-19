@@ -47,7 +47,8 @@
 
 		/* 暱稱 */
 		h3 {
-			font-weight: bold;
+			font-family: '王翰宗粗鋼體';
+			/* font-weight: bold; */
 			/* margin: 0; */
 		}
 
@@ -89,6 +90,8 @@
 			padding: 0.5rem auto;
 			background-color: transparent;
 
+			font-family: '王翰宗顏楷體';
+
 			/* 改變 hr 顏色 */
 			&:not(.collapsed) {
 				border-bottom: 2px solid var(--quote-text-color);
@@ -98,6 +101,7 @@
 
 		/* 手風琴內容區塊 */
 		.accordion-collapse {
+			font-family: '王翰宗中仿宋';
 			/* position: static; */
 		}
 	}
@@ -124,6 +128,8 @@
 		padding: 10px 0;
 		/* 防止選取 */
 		user-select: none;
+
+		font-family: '王翰宗粗鋼體';
 		font-size: 12px;
 		padding: 5px;
 	}
@@ -133,7 +139,8 @@
 	.menu-item.active {
 		border-top: 2px solid var(--main-color);
 
-		font-size: 15PX;
+		font-family: '王翰宗顏楷體';
+		font-size: 14PX;
 		font-weight: bold;
 		color: var(--main-color);
 	}

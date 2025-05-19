@@ -1,29 +1,33 @@
 <template>
-  <div class="inp_modle">
-    <p>{{ label }}</p>
-    <div class="soild"></div>
-    <input :id="id" :type="type" :placeholder="placeholder" :value="modelValue" @input="$emit('update:modelValue', $event.target.value)" />
-    <span class="quote">{{ quote }}</span>
-  </div>
+	<div class="inp_modle">
+		<p>{{ label }}</p>
+		<div class="soild"></div>
+		<input :id="id" :type="type" :placeholder="placeholder" :value="modelValue"
+			@input="$emit('update:modelValue', $event.target.value)" />
+		<span class="quote" :class="{ error: errorMessage }">
+			{{ errorMessage || quote }}
+		</span>
+	</div>
 </template>
 
 <script setup>
 defineProps({
-  id: String,
-  label: String,
-  type: {
-    type: String,
-    default: 'text'
-  },
-  placeholder: String,
-  modelValue: String,
-  quote: String
+	id: String,
+	label: String,
+	type: {
+		type: String,
+		default: 'text'
+	},
+	placeholder: String,
+	modelValue: String,
+	quote: String	// 預設提示
+	errorMessage: String // 錯誤訊息（可選）
 });
 </script>
 
-/* scoped 表示只在這個.vue裡面使用 */
-<style scoped>
 
+<!-- scoped 表示只在這個.vue裡面使用 -->
+<style scoped>
 /* 標準輸入區 */
 .inp_modle {
 
@@ -59,7 +63,7 @@ defineProps({
 		}
 	}
 
-  /* 引用區塊樣式 */
+	/* 引用區塊樣式 */
 	.quote {
 		border-left: 2.4px solid #777;
 		padding-left: 0.5em;
@@ -69,7 +73,9 @@ defineProps({
 		line-height: 1.6;
 	}
 
+	.quote.error {
+		color: var(--error);
+	}
+
 }
-
-
 </style>
