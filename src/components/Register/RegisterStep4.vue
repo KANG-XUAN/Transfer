@@ -89,7 +89,8 @@ export default {
 
   /* 暱稱 */
   h5 {
-    font-size: 22px;
+    font-size: 36px;
+    font-family: "王翰宗粗鋼體";
     color: var(--main-color);
     text-align: center;
     margin-bottom: 0;
@@ -107,21 +108,24 @@ export default {
     padding: 0 24px;
 
     .col{
+      display: flex;
+      align-items: center;
       margin-bottom: 10px;
     }
 
     /* 文字 */
     .name {
       display: inline-block;
-      font-weight: bold;
+      font-size: 20px;
+      font-family: "王翰宗中仿宋";
       color: var(--main-color);
-      width: 80px;
+      width: 100px;
     }
 
     /* 資料 */
     .data {
       margin-left: 5px;
-      margin-bottom: 10px;
+      font-weight: bold;
     }
   }
   
@@ -132,7 +136,7 @@ export default {
 
     /* 暱稱 */
     h5 {
-      font-size: 20px;
+      font-size: 32px;
     }
 
     /* 底線 */
@@ -142,16 +146,24 @@ export default {
 
     .form{
       padding: 0 10px;
+      margin-bottom: 90px;
 
-      .col{
+      .col {
+        flex-direction: column; /* 改為上下排列 */
+        align-items: flex-start; /* 讓文字靠左 */
       }
 
       /* 文字 */
       .name {
+        display: block;
+        border-bottom: 1px solid var(--main-color);
       }
 
       /* 資料 */
       .data {
+        width: 100%; /* 滿寬，避免折行 */
+        margin-bottom: 4px; /* 加點間距 */
+        margin-left: 2.4em; /* 或 padding-left: 1em; */
       }
     }
     

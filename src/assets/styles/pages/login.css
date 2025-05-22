@@ -43,10 +43,30 @@ body {
 .content-left {
 
 	/* 棲遲書屋 */
-	h1 {
-		font-family: '王翰宗中行書';
-		font-size: 90px;
+	.title {
 		text-align: center;
+		transition: opacity 2s ease 2s; /* 延遲1秒後逐漸顯示，持續2秒 */
+
+		h1{
+			font-family: '王翰宗中行書';
+			font-size: 90px;
+		}
+	}
+
+	/* 當 h1 加上 show 類別時顯示 */
+	.title-anime {
+		h1 {
+			/* 透明 */
+			opacity: 0;
+			/* 指定透明：淡入效果	ease:常見預設值，慢 - 快 - 慢 */
+			transition: opacity .8s ease;
+		}
+
+		/* JS加入的樣式，用以啟動上方動畫效果 */
+		.show {
+			/* 顯示 */
+			opacity: 1;
+		}
 	}
 
 	/* 歡迎標語 */
@@ -89,14 +109,14 @@ body {
 			/* 透明 */
 			opacity: 0;
 			/* 指定透明：淡入效果	ease:常見預設值，慢 - 快 - 慢 */
-			transition: opacity 1s ease;
+			transition: opacity 1s ease 0.5s;
 		}
 
 		/* 訊息再出來 */
 		.welcomeMessage,
 		.welcomeSoild {
 			opacity: 0;
-			transition: opacity 1s ease 1s;
+			transition: opacity 1s ease 1.5s;
 		}
 
 		/* JS加入的樣式，用以啟動上方動畫效果 */
@@ -150,13 +170,13 @@ body {
 			/* 透明 */
 			opacity: 0;
 			/* 指定透明：淡入效果	ease:常見預設值，慢 - 快 - 慢 */
-			transition: opacity 1.5s ease 1.5s;
+			transition: opacity 1.5s ease 2.0s;
 		}
 
 		/* 作者再出來 */
 		.author {
 			opacity: 0;
-			transition: opacity 1s ease 2s;
+			transition: opacity 1s ease 2.5s;
 		}
 
 		/* JS加入的樣式，用以啟動上方動畫效果 */
@@ -221,12 +241,22 @@ body {
 
 /* 右側登入區域】 */
 
+
+
+
+
+
+
+
+
+
 /* sm：小螢幕裝置（例如手機） */
 @media (max-width: 540px) {
 	.box-md-6 {
 		min-width: 100%;
 		padding: 0 !important;
-		height: 600px !important;
+		
+		height: 540px !important;
 	}
 
 	.content {
@@ -243,7 +273,7 @@ body {
 		.welcome{
 			/* 主題 */
 			h2 {
-				font-size: 36px !important;
+				font-size: 33px !important;
 			}
 
 			/* 內容 */
@@ -300,199 +330,3 @@ body {
 		}
 	}
 }
-
-/* md：中等螢幕裝置（例如平板） */
-@media (max-width: 768px) {
-	.box-md-6 {
-		width: 100%;
-		height: 800px;
-	}
-
-	.content {
-		border-radius: 10px;
-		width: 300px;
-		/* height: 720px; */
-	}
-
-	.content-left{
-
-		h1{
-			font-size: 90px;
-		}
-
-		/* 歡迎標語 */
-		.welcome {
-			margin-top: 60px;
-			
-
-			/* 主題 */
-			h2 {
-				font-size: 40px;
-			}
-
-			/* 橫線 */
-			.welcomeSoild {
-				width: 60%;
-			}
-
-			/* 內容 */
-			span {
-				margin: 0 auto;
-				width: 70%;
-
-				font-size: 24px;
-				text-align: justify;
-			}
-		}
-
-		/* 名言引用 */
-		.quotations {
-
-			/* 引用區塊樣式 */
-			.quote {
-				font-size: 18px;
-			}
-
-			/* 作者 */
-			.author {
-				font-size: 16px;
-			}
-		}
-
-
-	}
-
-	/* 【右側登入區域 */
-	.content-right {
-		/* 標準輸入區 */
-		.inp_modle {
-
-			p {
-				font-size: 40px !important;
-			}
-
-			input {
-				height: 32px !important;
-				font-size: 16px !important;
-			}
-		}
-
-		/* 登入按鈕 */
-		button {
-			padding: 5px 0 !important;
-			height: 34px !important;
-		}
-
-		/* 超大或 */
-		/* .or {
-			font-size: 72px;
-		} */
-
-		/* 忘記密碼與登入會員 */
-		.other {
-		}
-	}
-}
-
-/* lg：大型裝置（筆電等） */
-@media (max-width: 1200px) {
-	.box-md-6 {
-		width: 100%;
-		height: 800px;
-	}
-
-	.content {
-		border-radius: 10px;
-		width: 300px;
-	}
-
-	.content-left{
-
-		h1{
-			font-size: 90px;
-		}
-
-		/* 歡迎標語 */
-		.welcome {
-			font-family: '王翰宗粗鋼體';
-			margin-top: 60px;
-			
-
-			/* 主題 */
-			h2 {
-				font-size: 40px;
-			}
-
-			/* 橫線 */
-			.welcomeSoild {
-				width: 60%;
-			}
-
-			/* 內容 */
-			span {
-				width: 70%;
-				font-size: 24px;
-			}
-		}
-
-		/* 名言引用 */
-		.quotations {
-
-			/* 引用區塊樣式 */
-			.quote {
-				font-size: 18px;
-			}
-
-			/* 作者 */
-			.author {
-				font-size: 16px;
-			}
-		}
-
-
-	}
-
-	/* 【右側登入區域 */
-	.content-right {
-		/* 標準輸入區 */
-		.inp_modle {
-
-			p {
-				font-size: 36px;
-			}
-
-			input {
-				height: 36px;
-			}
-		}
-
-		/* 登入按鈕 */
-		button {
-			padding: 5px 0;
-			border: 0;
-			height: 36px;
-			border-radius: 4px;
-			background-color: var(--main-color);
-			font-family: '王翰宗粗鋼體';
-			color: var(--main-text-color);
-		}
-
-		/* 超大或 */
-		.or {
-			font-family: '王翰宗中行書';
-			font-size: 72px;
-			margin: 0;
-		}
-
-		/* 忘記密碼與登入會員 */
-		.other {
-			flex-direction: row;
-			justify-content: center;
-		}
-	}
-}
-
-
-
-
-

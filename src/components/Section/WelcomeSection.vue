@@ -3,8 +3,8 @@
     class="col box-md-6 d-flex align-items-center justify-content-center"
   >
     <div class="content content-left d-flex flex-column">
-      <div class="title">
-        <h1>{{ siteName }}</h1>
+      <div class="title title-anime">
+        <h1 :class="{ show: isShow }">{{ siteName }}</h1>
       </div>
       <div class="welcome welcome-anime">
         <h2 class="welcomeTitle" :class="{ show: isShow }">
