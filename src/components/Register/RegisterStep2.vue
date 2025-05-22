@@ -2,9 +2,9 @@
 	<!-- Step 2 -->
 	<div id="step2" :class="['step', nowStep === 2 ? 'active-step' : '']">
 		<h4>【貳．設定您的個人資料】</h4>
-		暱稱：{{ localForm.nickname }}<br>	
+		<!-- 暱稱：{{ localForm.nickname }}<br>	
 		性別：{{ genderText }}<br>	
-		生日：{{ localForm.birth }}<br>	
+		生日：{{ localForm.birth }}<br>	 -->
 		<BaseInput 
 		id="nickname" 
 		label="暱稱" 
@@ -155,14 +155,38 @@ export default {
 
 
 <style scoped>
-.gender {
-	display: flex;
-	gap: 1em;
-	margin: 8px 0;
+#step2 {
+
+	/* 性別核取 */
+	.gender {
+		display: flex;
+		flex-direction: row;
+		/* 對齊 - 調整核取少了2px */
+		margin-top: 2px;
+		margin-bottom: -2px;
+		margin-right: 20px;
+
+		.gender-check {
+			display: flex;
+
+			margin-right: 36px;
+
+			input[type="radio"] {
+				box-shadow: none;
+
+			}
+
+			label {
+				white-space: nowrap;
+				/* 防止意外換行 */
+			}
+		}
+
+
+	}
+
+	
 }
 
-.gender-check {
-	display: flex;
-	align-items: center;
-}
+
 </style>

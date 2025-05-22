@@ -46,12 +46,12 @@
               {{ nowStep === 4 ? "完成" : "下一步" }}
             </button>
           </div>
-          
-        </div>
-        <!-- 測試用 -->
+          <!-- 測試用 -->
           <button class="btn btn-light" v-show="nowStep <= 3" @click="nowStep++">
             {{ "跳過" }}
           </button>
+        </div>
+        
       </div>
     </div>
   </div>
@@ -114,12 +114,4 @@ export default {
 <style scoped>
 @import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css");
 
-.wrap {
-  height: 100vh;
-}
-
-.btn-group button {
-  width: 50%;
-  /* 固定按鈕寬度 */
-}
 </style>
