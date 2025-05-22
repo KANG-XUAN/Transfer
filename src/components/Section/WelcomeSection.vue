@@ -1,6 +1,6 @@
 <template>
   <div
-    class="col box-md-6 bg-primary d-flex align-items-center justify-content-center"
+    class="col box-md-6 d-flex align-items-center justify-content-center"
   >
     <div class="content content-left d-flex flex-column">
       <div class="title">

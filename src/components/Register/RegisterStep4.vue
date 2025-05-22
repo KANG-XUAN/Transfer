@@ -1,26 +1,26 @@
 <template>
   <!-- Step 4 -->
   <div id="step4" :class="['step', nowStep === 4 ? 'active-step' : '']">
-    <h4>【肆．確認您的資料並驗證】</h4>
+    <h4>{{ message.stepTitle }}</h4>
 
     <h5>{{ form.nickname }} 您好</h5>
     <div class="underline"></div>
 
     <div class="form">
       <div class="col">
-        <span class="name">性別：</span>
+        <span class="name">{{ message.labelText.gender }}：</span>
         <span class="data">{{ genderText }}</span>
       </div>
       <div class="col">
-        <span class="name">生日：</span>
+        <span class="name">{{ message.labelText.birth }}：</span>
       <span class="data">{{ form.birth }}</span>
       </div>
       <div class="col">
-        <span class="name">電子郵件：</span>
+        <span class="name">{{ message.labelText.email }}：</span>
         <span class="data">{{ form.email }}</span>
       </div>
       <div class="col">
-        <span class="name">電話：</span>
+        <span class="name">{{ message.labelText.phone }}：</span>
         <span class="data">{{ form.phone }}</span>
       </div>
     </div>
@@ -48,6 +48,20 @@ export default {
         email: this.form.email,
         phone: this.form.phone,
       },  // 複製 prop 避免直接改
+
+      // 修改顯示訊息區
+      message: {
+
+        stepTitle: '【肆．確認您的資料並驗證】',
+
+        labelText: {
+          gender: '性別',
+          birth: '生日',
+          email: '電子郵件',
+          phone: '電話',
+        },
+
+      },
     };
   },
   computed: {
