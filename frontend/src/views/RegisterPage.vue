@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="wrap">
+  <div id="app" class="wrap-register">
     <RegisterArea />
   </div>
 </template>

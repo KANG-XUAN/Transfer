@@ -1,4 +1,4 @@
-body {
+.wrap-register {
 	background-image: url('../../images/test_back.png');
 	/* 設定背景圖片 */
 	background-position: center;
@@ -22,14 +22,14 @@ body {
 }
 
 /* 圓角內容區塊 */
-.content {
+.content-login {
 	background-color: var(--back-color-whiteTransluc);
 	border-radius: 10px !important;
 	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 
 	width: 36%;
 	min-width: 480px;
-	min-height: 720px;
+	min-height: 660px;
 
 	text-align: center;
 }
@@ -142,9 +142,14 @@ body {
 		height: 540px !important;
 	}
 
-	.content {
-		border-radius: 0 !important;
-		background-color: transparent !important;
+	.content-login {
+		border-radius: 0;
+		background-color: transparent;
+		border-radius: 0px;
+		box-shadow: none;
+
+		min-width: 100%;
+		min-height: 540px;
 	}
 
 	.content-left {

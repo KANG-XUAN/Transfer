@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col box d-flex align-items-center justify-content-center">
-        <div class="content d-flex flex-column">
+        <div class="content-register d-flex flex-column">
           <!-- 進度條 -->
           <div class="progress mb-1">
             <div class="progress-bar" :style="{ width: (progressWidth[nowStep - 1] || 0) + '%' }"></div>

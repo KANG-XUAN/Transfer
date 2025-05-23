@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="wrap">
+  <div id="app" class="wrap-register">
     <div class="container-fluid">
       <div class="row">
         <!-- 左側歡迎區 -->

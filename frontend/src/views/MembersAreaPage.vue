@@ -19,8 +19,9 @@
 
 <script>
 // 路徑要對應到 components/Section 底下的元件位置
-import MembersArea from '@/components/modules/members/MembersArea.vue';
 import AccessAlert from '@/components/common/AccessAlert.vue';
+import MembersArea from '@/components/modules/members/MembersArea.vue';
+
 
 export default {
   name: "MembersAreaPage",

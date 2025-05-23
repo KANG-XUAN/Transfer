@@ -1,6 +1,6 @@
 <template>
   <div class="col box-md-6 d-flex align-items-center justify-content-center">
-    <div class="content content-left d-flex flex-column">
+    <div class="content-login content-left d-flex flex-column">
       <div class="title title-anime">
         <h1 :class="{ show: isShow }">{{ siteName }}</h1>
       </div>
