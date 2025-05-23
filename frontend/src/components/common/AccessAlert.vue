@@ -1,20 +1,38 @@
-<!-- 下方複製用標準模板
-<AccessDeniedAlert
+<!-- 複製用標準模板
+<AccessAlert
   v-if="showAccessAlert"
   title="'訊息標題'"
   message="'訊息文字'"
   button-text="按鈕文字"
   :showButton="true"
+  :closeOnOverlay="false"
   @action="goToPublisherApply" /> 
+
+components: {
+  AccessAlert,
+},
+data() {
+  return {
+    showAccessAlert: true, // 一進來就顯示彈窗
+  };
+},
+methods: {
+  // 關閉浮窗
+  goToPublisherApply() { this.showAccessAlert = false; }
+}
 -->
 
 
 <template>
-  <div class="overlay"  @click="handleOverlayClick">
-    <div class="modal-box"  @click.stop>
+  <div class="overlay" @click="handleOverlayClick">
+    <div class="modal-box" @click.stop>
       <h3 class="title">{{ title }}</h3>
       <p class="message" v-html="message"></p>
-      <button v-if="showButton" @click="$emit('action')" class="action-btn">
+      <button
+        v-if="showButton"
+        @click="$emit('action')"
+        class="action-btn"
+      >
         {{ buttonText }}
       </button>
     </div>
@@ -23,18 +41,21 @@
 
 <script>
 export default {
-  name: 'AccessDeniedAlert',
+  name: 'AccessAlert',
   props: {
     title: { type: String, required: true },
     message: { type: String, required: true },
     showButton: { type: Boolean, default: false },
-    buttonText: { type: String }
+    buttonText: { type: String },
+    closeOnOverlay: { type: Boolean, default: true } // 加入控制開關
   },
   methods: {
-  handleOverlayClick() {
-    this.$emit('action');
+    handleOverlayClick() {
+      if (this.closeOnOverlay) {
+        this.$emit('action');
+      }
+    }
   }
-}
 }
 </script>
 

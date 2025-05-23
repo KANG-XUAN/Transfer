@@ -3,24 +3,23 @@
     <div class="container-fluid">
       <div class="row">
         <!-- 左側歡迎區 -->
-        <WelcomeSection />
+        <WelcomeArea />
         <!-- 右側登入區 -->
-        <LoginSection />
+        <LoginArea />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-// 路徑要對應到 components/Section 底下的元件位置
-import WelcomeSection from '@/components/section/WelcomeSection.vue';
-import LoginSection from '@/components/section/LoginSection.vue';
+import WelcomeArea from '@/components/modules/login/WelcomeArea.vue';
+import LoginArea from '@/components/modules/login/LoginArea.vue';
 
 export default {
   name: "LoginPage",
   components: {
-    WelcomeSection,
-    LoginSection,
+    WelcomeArea,
+    LoginArea,
   },
 };
 </script>

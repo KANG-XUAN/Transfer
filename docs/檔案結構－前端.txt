@@ -12,6 +12,7 @@ src
 │       │   ├── font.css
 │       │   ├── main.css
 │       │   └── themes.css
+│       │
 │       └── pages	  ### 頁面專用
 │           ├── login.css
 │           ├── membersArea.css
@@ -28,6 +29,7 @@ src
 │   │   └── Header.vue
 │   │
 │   ├── modules       ## 區域元件
+│   │   │
 │   │   ├── members   ### 會員區元件
 │   │   │   └── MembersArea.vue
 │   │   │

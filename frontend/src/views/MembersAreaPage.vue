@@ -6,6 +6,7 @@
       :message="message.AccessAlert.message" 
       :button-text="message.AccessAlert.btText"
       :showButton="true" 
+      :closeOnOverlay="false"
       @action="goToPublisherApply" />
 
     <div class="container-fluid">
@@ -41,9 +42,8 @@ export default {
     };
   },
   methods: {
-    goToPublisherApply() {
-      this.showAccessAlert = false; // 關閉視窗
-    }
+    // 關閉浮窗
+    goToPublisherApply() { this.showAccessAlert = false; }
   }
 };
 </script>

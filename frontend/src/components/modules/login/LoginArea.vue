@@ -31,6 +31,6 @@
 
 <script>
 export default {
-  name: "LoginSection",
+  name: "LoginArea",
 };
 </script>

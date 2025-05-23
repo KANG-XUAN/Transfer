@@ -28,7 +28,7 @@
 
     <div class="col">
       <!-- <span class="name">驗證碼：</span> -->
-      <div class="captcha" style="">
+      <div  class="captcha">
         <!-- <input type="text" v-model="captchaInput" placeholder="請輸入驗證碼" style="width: 120px; margin-right: 10px;"> -->
         <BaseInput 
         id="captcha" 
@@ -37,8 +37,8 @@
         placeholder="請輸入驗證碼" 
         quote="message.quote.repassword"
         error-message="" 
-        v-model="captchaInput" />
-        <img :src="captchaImage" style="" alt="captcha">
+        v-model="message.captch.input" />
+        <img :src="message.captch.image" style="" alt="captcha">
       </div>
     </div>
   </div>
@@ -79,6 +79,12 @@ export default {
           birth: '生日',
           email: '電子郵件',
           phone: '電話',
+        },
+
+        // 驗證碼(未實作。等連結後端)
+        captch:{
+          input: '',
+          image: '',
         },
 
       },
@@ -151,10 +157,13 @@ export default {
     
   }
 
+  /* 驗證碼區塊 */
   .captcha{
     display: flex;
     flex-direction: row;
     align-items: center;
+    transform: translateY(60px);
+
     margin-top: 30px;
     padding: 0 24px;
     gap: 30px;
@@ -217,6 +226,7 @@ export default {
     }
 
     .captcha{
+      transform: translateY(20px);
       margin: 20px 0 !important;
       padding: 0 10px;
     }
