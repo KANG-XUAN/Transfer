@@ -58,14 +58,14 @@
 </template>
 
 <script>
-import RegisterStep1 from '@/components/Register/RegisterStep1.vue';
-import RegisterStep2 from '@/components/Register/RegisterStep2.vue';
-import RegisterStep3 from '@/components/Register/RegisterStep3.vue';
-import RegisterStep4 from '@/components/Register/RegisterStep4.vue';
+import RegisterStep1 from '@/components/modules/register/RegisterStep1.vue';
+import RegisterStep2 from '@/components/modules/register/RegisterStep2.vue';
+import RegisterStep3 from '@/components/modules/register/RegisterStep3.vue';
+import RegisterStep4 from '@/components/modules/register/RegisterStep4.vue';
 
 export default {
   // 註冊名稱
-  name: 'RegisterForm',
+  name: 'RegisterArea',
   // 該檔案資料庫
   data() {
     return {
@@ -100,7 +100,7 @@ export default {
       const stepRef = `step${this.nowStep}`;
       if (this.$refs[stepRef].validateForm()) {
         if (this.nowStep === 4) {
-          if (confirm('確認資料是否無誤？')) this.$router.push('/login');
+          if (confirm('確認資料是否無誤？')) this.$router.push('/membersArea');
         } else {
           this.nowStep++;
         }

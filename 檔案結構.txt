@@ -18,15 +18,25 @@ src
 │           └── register.css
 │
 ├── components        # 全局元件
-│   ├── Form       	  ## 表單元件
+│   │
+│   ├── common        ## 通用元件
+│   │   ├── AccessAlert.vue
 │   │   └── BaseInput.vue
 │   │
-│   ├── Register      ## 註冊元件
-│   │   ├── Register.vue.vue
-│   │   ├── RegisterStep1.vue
-│   │   ├── RegisterStep2.vue
-│   │   ├── RegisterStep3.vue
-│   │   └── RegisterStep4.vue
+│   ├── layout        ## 版面元件(預留還沒實作)
+│   │   ├── Footer.vue
+│   │   └── Header.vue
+│   │
+│   ├── modules       ## 區域元件
+│   │   ├── members   ### 會員區元件
+│   │   │   └── MembersArea.vue
+│   │   │
+│   │   └── register  ### 註冊區元件
+│   │       ├── RegisterArea.vue
+│   │       ├── RegisterStep1.vue
+│   │       ├── RegisterStep2.vue
+│   │       ├── RegisterStep3.vue
+│   │       └── RegisterStep4.vue
 │   │
 │   └── Section       ## 區塊元件
 │       ├── LoginSection.vue
@@ -37,6 +47,7 @@ src
 │
 ├── views             # 頁面 (如 LoginPage、HomePage 等)
 │   ├── LoginPage.vue
+│   ├── MembersAreaPage.vue
 │   └── RegisterPage.vue
 │
 ├── App.vue           # 根元件

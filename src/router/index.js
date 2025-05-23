@@ -3,6 +3,7 @@ import Router from 'vue-router';
 
 import LoginPage from '@/views/LoginPage.vue';
 import RegisterPage from '@/views/RegisterPage.vue';
+import MembersAreaPage from '@/views/MembersAreaPage.vue';
 
 Vue.use(Router);
 
@@ -22,6 +23,11 @@ export default new Router({
 			path: '/register',
 			name: 'RegisterForm',
 			component: RegisterPage,
+		},
+		{
+			path: '/membersArea',
+			name: 'MembersAreaForm',
+			component: MembersAreaPage,
 		},
 
 	],

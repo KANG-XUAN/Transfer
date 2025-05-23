@@ -13,8 +13,8 @@
 
 <script>
 // 路徑要對應到 components/Section 底下的元件位置
-import WelcomeSection from '@/components/Section/WelcomeSection.vue';
-import LoginSection from '@/components/Section/LoginSection.vue';
+import WelcomeSection from '@/components/section/WelcomeSection.vue';
+import LoginSection from '@/components/section/LoginSection.vue';
 
 export default {
   name: "LoginPage",

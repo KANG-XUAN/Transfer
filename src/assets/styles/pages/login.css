@@ -16,7 +16,7 @@ body {
 
 /* 圓角內容區塊 */
 .content {
-	background-color: var(--second-colorLight);
+	background-color: var(--back-color-whiteTransluc);
 	border-radius: 10px !important;
 	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 
@@ -214,15 +214,18 @@ body {
 	}
 	
 	/* 登入按鈕 */
-	button {
+	.button {
+		display: block;
 		padding: 5px;
 		border: 0;
 		border-radius: 4px;
 		background-color: var(--main-color);
-		height: 32px;
 
 		font-family: '王翰宗粗鋼體';
+		font-size: 20px;
 		color: var(--main-text-color);
+		text-align: center;
+		text-decoration: none;
 	}
 
 	/* 超大或 */

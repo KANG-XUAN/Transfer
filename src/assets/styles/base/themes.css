@@ -4,8 +4,7 @@
 	--main-color: rgb(150, 0, 0);
 	/* 輔色調 */
 	--second-color: rgb(205, 160, 99);
-	/* 輔色調(淺) */
-	--second-colorLight: rgba(248, 249, 250, 0.5);
+	
 
 	/* 主色調文字色 */
 	--main-text-color: white;
@@ -14,7 +13,12 @@
 
 
 	/* 底層背景色 */
-	--main-back-color: rgb(255, 255, 255);
+	/* --main-back-color: rgb(255, 255, 255); */
+	--back-color-white: rgb(255, 255, 255);
+	/* 半透明背景色 */
+	/* --second-colorLight: rgba(248, 249, 250, 0.5); */
+	--back-color-whiteTransluc: rgba(248, 249, 250, 0.5);;
+	--back-color-blackTransluc: rgba(0, 0, 0, 0.3);
 
 
 

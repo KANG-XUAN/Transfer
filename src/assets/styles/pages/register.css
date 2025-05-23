@@ -17,7 +17,7 @@ body {
 .content {
 	margin: 50px 0;
 	padding: 20px;
-	background-color: var(--second-colorLight);
+	background-color: var(--back-color-whiteTransluc);
 	border-radius: 10px;
 
 	width: 36%;
@@ -57,7 +57,7 @@ body {
 
 	/* 圓角內容區塊 */
 	.content {
-		background-color: var(--second-colorLight);
+		background-color: var(--back-color-whiteTransluc);
 		border-radius: 0px;
 		box-shadow: none;
 

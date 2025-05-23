@@ -25,12 +25,32 @@
       </div>
     </div>
     
+
+    <div class="col">
+      <!-- <span class="name">驗證碼：</span> -->
+      <div class="captcha" style="">
+        <!-- <input type="text" v-model="captchaInput" placeholder="請輸入驗證碼" style="width: 120px; margin-right: 10px;"> -->
+        <BaseInput 
+        id="captcha" 
+        type="text" 
+        label="驗證碼" 
+        placeholder="請輸入驗證碼" 
+        quote="message.quote.repassword"
+        error-message="" 
+        v-model="captchaInput" />
+        <img :src="captchaImage" style="" alt="captcha">
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import BaseInput from '@/components/common/BaseInput.vue';
+
 export default {
   name: "RegisterStep4",
+  // 引入子元件
+	components: { BaseInput },
   props: {
     nowStep: Number,
     form: {
@@ -127,6 +147,36 @@ export default {
       margin-left: 5px;
       font-weight: bold;
     }
+
+    
+  }
+
+  .captcha{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 30px;
+    padding: 0 24px;
+    gap: 30px;
+
+    .inp_modle{
+
+      input {
+        flex: 1; 
+        padding: 8px;
+        
+        font-size: 16px;
+      }
+    }
+    
+
+    img {
+      height: 60px; 
+      width: 100%;
+      cursor: pointer; 
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
   }
   
 }
@@ -146,7 +196,6 @@ export default {
 
     .form{
       padding: 0 10px;
-      margin-bottom: 90px;
 
       .col {
         flex-direction: column; /* 改為上下排列 */
@@ -165,6 +214,11 @@ export default {
         margin-bottom: 4px; /* 加點間距 */
         margin-left: 2.4em; /* 或 padding-left: 1em; */
       }
+    }
+
+    .captcha{
+      margin: 20px 0 !important;
+      padding: 0 10px;
     }
     
   }

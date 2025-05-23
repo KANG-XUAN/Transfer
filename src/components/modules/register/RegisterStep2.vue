@@ -69,7 +69,7 @@
 </template>
 
 <script>
-import BaseInput from '@/components/Form/BaseInput.vue';
+import BaseInput from '@/components/common/BaseInput.vue';
 
 export default {
 	// 註冊名稱
