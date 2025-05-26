@@ -31,6 +31,23 @@
 	min-height: 90vh;
 }
 
+
+/* 響應式：手機時上下堆疊，寬度100% */
+@media (max-width: 991px) {
+	.box {
+		/* padding: 30px 0; */
+		/* height: 700px; */
+		/* width: 100%; */
+
+	}
+
+	/* 暱稱 */
+	h3 {
+		font-family: '王翰宗粗鋼體';
+		font-size: 40px !important;
+	}
+}
+
 /****************************** 標準區 - 開始 ******************************/
 
 /* 標準輸入區 */
@@ -226,7 +243,7 @@
 
 
 /* 區塊：個人資訊 */
-#settings {
+#userSettings {
 
 	/* 分區標題 */
 	h5 {
@@ -281,6 +298,7 @@
 		/* 調整下拉式選單文字位置 */
 		select {
 			padding-left: 5px;
+			padding-right: 5px;
 		}
 
 	}
@@ -376,20 +394,4 @@
 	background-color: rgba(0, 0, 0, 0.4);
 	z-index: 998;
 	display: none;
-}
-
-/* 響應式：手機時上下堆疊，寬度100% */
-@media (max-width: 991px) {
-	.box {
-		/* padding: 30px 0; */
-		/* height: 700px; */
-		/* width: 100%; */
-
-	}
-
-	/* 暱稱 */
-	h3 {
-		font-family: '王翰宗粗鋼體';
-		font-size: 40px !important;
-	}
 }

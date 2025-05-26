@@ -31,8 +31,8 @@
       <div  class="captcha">
         <!-- <input type="text" v-model="captchaInput" placeholder="請輸入驗證碼" style="width: 120px; margin-right: 10px;"> -->
         <BaseInput 
-        id="captcha" 
-        type="text" 
+        inp_id="captcha" 
+        inp_type="text" 
         label="驗證碼" 
         placeholder="請輸入驗證碼" 
         quote="message.quote.repassword"
