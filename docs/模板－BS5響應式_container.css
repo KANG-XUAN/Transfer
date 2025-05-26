@@ -1,0 +1,90 @@
+/* ========================================
+   基本全局樣式（適用於所有設備）
+   寫好的CSS貼在這區
+======================================== */
+
+/* 預設的全局樣式 */
+body {
+   font-family: Arial, sans-serif;
+   margin: 0;
+   padding: 0;
+   background-color: #f4f4f4;
+}
+
+.container {
+   width: 100%;  /* 預設容器寬度為 100% */
+   padding: 0 15px;
+   margin: 0 auto;
+}
+
+/* ========================================
+   xxl: ≥ 1400px (大桌機、4K 螢幕)
+   container 寬度: 1320px
+======================================== */
+@media (min-width: 1400px) {
+   .container {
+      max-width: 1320px; /* 大桌機設定 */
+      margin: 0 auto;
+      padding: 0 20px;
+   }
+}
+
+/* ========================================
+   xl: 1200px ~ 1399px (一般桌機)
+   container 寬度: 1140px
+======================================== */
+@media (min-width: 1200px) {
+   .container {
+      max-width: 1140px; /* 一般桌機設定 */
+      margin: 0 auto;
+      padding: 0 15px;
+   }
+}
+
+/* ========================================
+   lg: 992px ~ 1199px (小型桌機、橫向大型平板)
+   container 寬度: 960px
+======================================== */
+@media (min-width: 992px) {
+   .container {
+      max-width: 960px; /* 小型桌機/橫向平板設定 */
+      margin: 0 auto;
+      padding: 0 10px;
+   }
+}
+
+/* ========================================
+   md: 768px ~ 991px (橫向 iPad、小型平板)
+   container 寬度: 720px
+======================================== */
+@media (min-width: 768px) {
+   .container {
+      max-width: 720px; /* 小型平板設定 */
+      margin: 0 auto;
+      padding: 0 10px;
+   }
+}
+
+/* ========================================
+   sm: 577px ~ 767px (大型手機、直向平板)
+   container 寬度: 540px
+======================================== */
+@media (min-width: 576px) {
+   .container {
+      max-width: 540px; /* 大型手機/直向平板設定 */
+      margin: 0 auto;
+      padding: 0 10px;
+   }
+}
+
+/* ========================================
+   xs: ≤ 576px (手機)
+   container 寬度: 100% (fluid)
+======================================== */
+@media (max-width: 576px) {
+   .container {
+      max-width: 100%; /* 手機上容器寬度全寬 */
+      margin: 0 0;  /* 手機不需要居中 */
+      padding: 0 10px; /* 設定適當的內邊距 */
+   }
+}
