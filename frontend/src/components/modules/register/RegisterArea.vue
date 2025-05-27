@@ -131,6 +131,7 @@ export default {
     min-width: 90%;
 
   }
+
 }
 
 
@@ -150,5 +151,6 @@ export default {
     min-width: 100%;
     min-height: 600px;
   }
+
 }
 </style>

@@ -189,4 +189,48 @@ export default {
   }
   
 }
+
+@media (max-width: 540px) {
+  #step4 {
+
+    /* 暱稱 */
+    h5 {
+      font-size: 32px;
+    }
+
+    /* 底線 */
+    .underline {
+      margin: 14px auto;
+    }
+
+    .form{
+      padding: 0 10px;
+
+      .col {
+        flex-direction: column; /* 改為上下排列 */
+        align-items: flex-start; /* 讓文字靠左 */
+      }
+
+      /* 文字 */
+      .name {
+        display: block;
+        border-bottom: 1px solid var(--main-color);
+      }
+
+      /* 資料 */
+      .data {
+        width: 100%; /* 滿寬，避免折行 */
+        margin-bottom: 4px; /* 加點間距 */
+        margin-left: 2.4em; /* 或 padding-left: 1em; */
+      }
+    }
+
+    .captcha{
+      transform: translateY(20px);
+      margin: 20px 0 !important;
+      padding: 0 10px;
+    }
+    
+  }
+}
 </style>
