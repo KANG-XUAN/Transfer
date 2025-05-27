@@ -1,8 +1,8 @@
 <template>
   <div
-    class="col box-md-6 d-flex align-items-center justify-content-center"
+    class="col-sm-12 col-md-6 d-flex align-items-center justify-content-center"
   >
-    <div class="content-login content-right d-flex flex-column">
+    <div class="content page-login content-right d-flex flex-column">
       <div class="login-box d-flex">
         <div class="inp_modle">
           <p>帳號</p>
@@ -34,3 +34,68 @@ export default {
   name: "LoginArea",
 };
 </script>
+
+<style scoped>
+/* 標準輸入區 */
+	.inp_modle {
+		p {
+			font-size: 32px;
+		}
+
+		.soild {
+			height: 3px;
+		}
+
+		input {
+			height: 32px;
+			font-size: 18px;
+		}
+	}
+
+	/* 登入按鈕 */
+	.button {
+		display: block;
+		padding: 5px;
+		border: 0;
+		border-radius: 4px;
+		background-color: var(--main-color);
+
+		font-family: '王翰宗粗鋼體';
+		font-size: 20px;
+		color: var(--main-text-color);
+		text-align: center;
+		text-decoration: none;
+	}
+
+	/* 超大或 */
+	.or {
+		font-family: '王翰宗中行書';
+		font-size: 72px;
+		margin: 0;
+	}
+
+	/* 忘記密碼與登入會員 */
+	.other {
+		flex-direction: row;
+		justify-content: center;
+		gap: 10px;
+
+		a{
+			font-size: 18px;
+			
+			color: var(--second-color);
+			text-decoration: none;
+			
+
+			&:hover{
+				font-weight: bold;
+				
+				text-decoration: underline solid;
+				/* 粗底線 */
+				text-decoration-thickness: 2.2px;
+				/* 與文字的距離 */
+				text-underline-offset: 4px; 
+			}
+		}
+	}
+</style>

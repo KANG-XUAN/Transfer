@@ -6,8 +6,8 @@
 		性別：{{ genderText }}<br>	
 		生日：{{ localForm.birth }}<br>	 -->
 		<BaseInput 
-		inp_id="nickname" 
-		inp_type="text" 
+		id="nickname" 
+		type="text" 
 		:label="message.inputLabel.nickname" 
 		:placeholder="message.inputplahold.nickname" 
 		:quote="message.quote.nickname"
@@ -58,8 +58,8 @@
 
 		<!-- 生日 -->
 		<BaseInput 
-			inp_id="birth" 
-			inp_type="date" 
+			id="birth" 
+			type="date" 
 			:label="message.inputLabel.birth" 
 			:quote="message.quote.birth"
 			:error-message="formErrors.birth"

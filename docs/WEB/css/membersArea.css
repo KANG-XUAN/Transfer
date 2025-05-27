@@ -19,7 +19,15 @@
 	/* 輔助待刪 */
 }
 
+/* 響應式：手機時上下堆疊，寬度100% */
+@media (max-width: 991px) {
+	.box {
+		/* padding: 30px 0; */
+		/* height: 700px; */
+		/* width: 100%; */
 
+	}
+}
 
 
 /* 內容區塊 */
@@ -31,27 +39,10 @@
 	min-height: 90vh;
 }
 
-
-/* 響應式：手機時上下堆疊，寬度100% */
-@media (max-width: 991px) {
-	.box {
-		/* padding: 30px 0; */
-		/* height: 700px; */
-		/* width: 100%; */
-
-	}
-
-	/* 暱稱 */
-	h3 {
-		font-family: '王翰宗粗鋼體';
-		font-size: 40px !important;
-	}
-}
-
 /****************************** 標準區 - 開始 ******************************/
 
 /* 標準輸入區 */
-.edit_block {
+.inp_modle {
 	width: 100%;
 	text-align: left;
 	line-height: normal;
@@ -242,10 +233,15 @@
 
 
 
-/* 區塊：個人資訊 */
-#userSettings {
+/* 資訊管理 */
+#settings {
 
-	/* 分區標題 */
+	/* 留出左右空白 */
+	section {
+		padding: 0 30px;
+	}
+
+	/* 小區標題 */
 	h5 {
 		margin: 0;
 		font-size: 28px;
@@ -253,13 +249,11 @@
 		color: var(--main-color);
 	}
 
-	/* 編輯區塊 */
-	.edit_block {
+	.inp_modle {
 		display: flex;
 		align-items: center;
 		margin-bottom: 10px;
 
-		/* Key名稱(暱稱、生日...) */
 		label {
 			/* 不允許縮小 */
 			flex-shrink: 0;
@@ -272,7 +266,6 @@
 			line-height: 40px;
 		}
 
-		/* 未編輯時：顯示文字 */
 		p {
 			height: 40px;
 			font-size: 22px;
@@ -281,7 +274,6 @@
 			line-height: 40px;
 		}
 
-		/* 編輯時：顯示輸入框 */
 		input,
 		select {
 			.label-badge {
@@ -295,16 +287,13 @@
 			}
 		}
 
-		/* 調整下拉式選單文字位置 */
 		select {
 			padding-left: 5px;
-			padding-right: 5px;
 		}
 
 	}
 
-	/* 編輯區塊－換行版(有towline) */
-	.edit_block.towline {
+	.inp_modle.towline {
 		flex-direction: column;
 		align-items: flex-start;
 
@@ -318,16 +307,8 @@
 		}
 	}
 
-
-	/* 【分區設定與變體||狀態－始 */
-
-	/* 留出左右空白 */
-	section {
-		padding: 0 30px;
-	}
-
 	/* 編輯時白色高亮 */
-	.sectionHighlight {
+	.personal-info-section {
 		z-index: 100;
 		padding-top: 10px;
 		padding-bottom: 20px;
@@ -335,8 +316,7 @@
 
 	}
 
-	/* 高亮區塊 && 編輯中 */
-	.sectionHighlight.editing {
+	.personal-info-section.editing {
 		position: relative;
 		z-index: 999;
 
@@ -348,15 +328,15 @@
 
 	}
 
-	/* 帳號密碼 && 高亮區塊 */
-	#accountSection.sectionHighlight,
-	#passwordSection.sectionHighlight {
+	/* 帳號密碼 */
+	#accountSection.personal-info-section,
+	#passwordSection.personal-info-section {
 		margin-bottom: -20px;
 	}
 
-	/* 帳號密碼 && 高亮區塊 && 編輯中：增加左右白色區域 */
-	#accountSection.sectionHighlight.editing,
-	#passwordSection.sectionHighlight.editing {
+	/* 帳號密碼編輯狀態增加左右白色區域 */
+	#accountSection.personal-info-section.editing,
+	#passwordSection.personal-info-section.editing {
 		&::before {
 			content: "";
 			position: absolute;
@@ -369,12 +349,8 @@
 			z-index: -1;
 		}
 	}
-
-	/* 分區設定與變體||狀態－終】 */
 }
 
-
-/* 分割線 */
 .soild {
 	margin: 10px 0;
 	height: 2px;
@@ -384,7 +360,7 @@
 
 
 
-/* 遮罩 */
+
 .overlay {
 	position: fixed;
 	top: 0;
@@ -392,6 +368,7 @@
 	width: 100%;
 	height: 100%;
 	background-color: rgba(0, 0, 0, 0.4);
+	/* 半透明黑色遮罩 */
 	z-index: 998;
 	display: none;
 }

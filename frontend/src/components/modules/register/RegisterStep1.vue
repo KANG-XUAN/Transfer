@@ -22,13 +22,13 @@
       </span>
     </div> -->
 
-		<BaseInput inp_id="username" inp_type="text" :label="message.inputLabel.username" :placeholder="message.inputplahold.username" :quote="message.quote.username"
+		<BaseInput id="username" type="text" :label="message.inputLabel.username" :placeholder="message.inputplahold.username" :quote="message.quote.username"
 			:errorMessage="formErrors.username" @blur="validateUsername" v-model="localForm.username" />
 
-		<BaseInput inp_id="password" inp_type="password" :label="message.inputLabel.password" :placeholder="message.inputplahold.password" :quote="message.quote.password"
+		<BaseInput id="password" type="password" :label="message.inputLabel.password" :placeholder="message.inputplahold.password" :quote="message.quote.password"
 		:error-message="formErrors.password" @blur="validatePassword" v-model="localForm.password" />
 
-		<BaseInput inp_id="repassword" inp_type="password" :label="message.inputLabel.repassword" :placeholder="message.inputplahold.repassword" :quote="message.quote.repassword"
+		<BaseInput id="repassword" type="password" :label="message.inputLabel.repassword" :placeholder="message.inputplahold.repassword" :quote="message.quote.repassword"
 			:error-message="formErrors.repassword" @blur="validateRepassword" v-model="localForm.repassword" />
 	</div>
 </template>

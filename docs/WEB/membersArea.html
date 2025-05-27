@@ -100,15 +100,15 @@
 
 						<!-- 管理選單 -->
 						<div class="menu">
-							<div class="menu-item active" data-section="myBookcase">收藏書櫃</div>
-							<div class="menu-item" data-section="orderRecord">消費紀錄</div>
-							<div class="menu-item" data-section="userSettings">個人設定</div>
+							<div class="menu-item active" data-section="wishlist">收藏書櫃</div>
+							<div class="menu-item" data-section="purchase">消費紀錄</div>
+							<div class="menu-item" data-section="settings">個人設定</div>
 						</div>
 
 
 
 						<!-- 區塊：書櫃管理－始 -->
-						<div class="selectContent" id="myBookcase">
+						<div class="selectContent" id="wishlist">
 							<h5 class="mb-3">書櫃展示（僅展示效果，未實作，等設計好的商品卡片。這段會刪掉）</h5>
 							<div class="section-divider mb-4">
 								<h5 class="section-title">我的最愛</h5>
@@ -126,9 +126,9 @@
 										style="scroll-behavior: smooth;">
 										<!-- 一本書 -->
 										<div class="card" style="width: 12rem; flex: 0 0 auto;">
-											<img src="./images/book1.png" class="card-img-top" alt="書封">
+											<img src="./images/book3.png" class="card-img-top" alt="書封">
 											<div class="card-body">
-												<h5 class="card-title fw-bold text-truncate">春水遊鯉</h5>
+												<h5 class="card-title fw-bold text-truncate">秋山煙嵐</h5>
 												<p class="card-text text-end text-truncate"><small>清笛吹夜</small></p>
 												<div class="d-flex justify-content-between align-items-center">
 													<select class="form-select form-select-sm w-auto">
@@ -221,8 +221,8 @@
 												<div class="d-flex justify-content-between align-items-center">
 													<select class="form-select form-select-sm w-auto">
 														<option>❤想看</option>
-														<option>👁在讀</option>
-														<option selected>🏅已讀</option>
+														<option selected>👁在讀</option>
+														<option>🏅已讀</option>
 													</select>
 													<button class="btn btn-sm btn-outline-danger">移除</button>
 												</div>
@@ -269,8 +269,8 @@
 												<div class="d-flex justify-content-between align-items-center">
 													<select class="form-select form-select-sm w-auto">
 														<option>❤想看</option>
-														<option selected>👁在讀</option>
-														<option>🏅已讀</option>
+														<option>👁在讀</option>
+														<option selected>🏅已讀</option>
 													</select>
 													<button class="btn btn-sm btn-outline-danger">移除</button>
 												</div>
@@ -397,8 +397,8 @@
 
 
 						<!-- 區塊：購買紀錄－始 -->
-						<div class="selectContent" id="orderRecord" style="display: none;">
-							<h5 class="mb-3">歷史訂單（僅展示效果，未實作，小計要算每筆還是這樣累加。這段會刪掉）</h5>
+						<div class="selectContent" id="purchase" style="display: none;">
+							<h5 class="mb-3">歷史訂單（僅展示效果，未實作。這段會刪掉）</h5>
 							<!-- 一筆訂單 -->
 							<div class="list-group mb-4">
 								<div class="list-group-item">
@@ -447,36 +447,38 @@
 								</div>
 								<!-- 明細 -->
 								<div class="list-group-item">
-									<div class="row align-items-center py-2">
-										<div class="col">春水遊鯉</div>
-										<div class="col text-center">售價：399</div>
-										<div class="col text-center">1本</div>
-										<div class="col text-end">小計：399</div>
+									<div class="d-flex justify-content-between align-items-center">
+										<div>
+											<p>春水遊鯉</p>
+											<p>冬日翠峰</p>
+											<p>秋山煙嵐</p>
+											<p>夏木幽亭</p>
+										</div>
+										<div>
+											<p>售價：399</p>
+											<p>售價：399</p>
+											<p>售價：399</p>
+											<p>售價：399</p>
+										</div>
+										<div>
+											<p>1本</p>
+											<p>1本</p>
+											<p>1本</p>
+											<p>1本</p>
+										</div>
+										<div>
+											<p>小計：399</p>
+											<p>小計：798</p>
+											<p>小計：1197</p>
+											<p>小計：1596</p>
+										</div>
 									</div>
-									<div class="row align-items-center py-2">
-										<div class="col">冬日翠峰</div>
-										<div class="col text-center">售價：399</div>
-										<div class="col text-center">1本</div>
-										<div class="col text-end">小計：798</div>
-									</div>
-									<div class="row align-items-center py-2">
-										<div class="col">秋山煙嵐</div>
-										<div class="col text-center">售價：399</div>
-										<div class="col text-center">1本</div>
-										<div class="col text-end">小計：1197</div>
-									</div>
-									<div class="row align-items-center py-2">
-										<div class="col">夏木幽亭</div>
-										<div class="col text-center">售價：399</div>
-										<div class="col text-center">1本</div>
-										<div class="col text-end">小計：1596</div>
-									</div>
-
 									<hr>
-
-									<div class="text-end">
-										<p>折扣：-0</p>
-										<p>總計：1596</p>
+									<div class="d-flex justify-content-end align-items-center">
+										<div>
+											<p>折扣：-0</p>
+											<p>總計：1596</p>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -487,7 +489,7 @@
 
 
 						<!-- 區塊：個人設定－始 -->
-						<div class="selectContent" id="userSettings" style="display: none;">
+						<div class="selectContent" id="settings" style="display: none;">
 							<!-- 🌈 個人化設定 -->
 							<section class="mb-4">
 								<h5>個人化設定</h5>
@@ -496,7 +498,7 @@
 									<input class="form-check-input" type="checkbox" id="darkModeToggle">
 									<label class="form-check-label" for="darkModeToggle">深色模式</label>
 								</div> -->
-								<div class="edit_block mt-2">
+								<div class="inp_modle mt-2">
 									<label class="form-label">主題風格</label>
 									<select id="themeSelector">
 										<option value="default" selected>經典金虹</option>
@@ -507,15 +509,15 @@
 							</section>
 
 							<!-- 個人資料管理 -->
-							<section id="infoSection" class="mb-4 sectionHighlight">
+							<section id="infoSection" class="mb-4 personal-info-section">
 								<h5>個人資料管理</h5>
 								<div class="soild"></div>
-								<div class="edit_block">
+								<div class="inp_modle">
 									<label>暱稱</label>
 									<input type="text" value="長安不問" class="edit-input" style="display:none;">
 									<p class="display-text">長安不問</p>
 								</div>
-								<div class="edit_block">
+								<div class="inp_modle">
 									<label class="form-label">性別</label>
 									<select class="edit-input" style="display:none;">
 										<option>男性</option>
@@ -524,7 +526,7 @@
 									</select>
 									<p class="display-text">男性</p>
 								</div>
-								<div class="edit_block">
+								<div class="inp_modle">
 									<label class="form-label">生日</label>
 									<input type="date" value="2000-01-01" class="edit-input" style="display:none;">
 									<p class="display-text">2000-01-01</p>
@@ -535,11 +537,11 @@
 							</section>
 
 							<!-- 📱 聯繫方式 -->
-							<section id="contactSection" class="mb-4 sectionHighlight">
+							<section id="contactSection" class="mb-4 personal-info-section">
 								<h5 class="mb-3">聯繫方式</h5>
 								<div class="soild"></div>
 
-								<div class="edit_block towline">
+								<div class="inp_modle towline">
 									<div class="label-badge">
 										<label>電子信箱</label>
 										<span class="badge bg-success">已驗證</span>
@@ -553,7 +555,7 @@
 									</div>
 								</div>
 
-								<div class="edit_block towline">
+								<div class="inp_modle towline">
 									<div class="label-badge">
 										<label>手機號碼</label>
 										<span class="badge bg-warning text-dark">未驗證</span>
@@ -561,7 +563,8 @@
 									<div class="d-flex align-items-center w-100">
 										<input type="text" value="0912345678" class="edit-input" style="display:none;">
 										<p class="display-text">0912345678</p>
-										<button class="display-text btn btn-sm btn-outline-danger ms-2">寄送驗證信</button>
+										<button
+											class="display-text btn btn-sm btn-outline-secondary ms-2">寄送驗證信</button>
 									</div>
 								</div>
 
@@ -574,23 +577,23 @@
 								<h5>隱私與安全性</h5>
 								<div class="soild"></div>
 
-								<div id="accountSection" class="edit_block towline sectionHighlight">
+								<div id="accountSection" class="inp_modle towline personal-info-section">
 									<label class="form-label">帳號</label>
 									<div class="d-flex align-items-center w-100">
 										<input type="email" value="myusername" class="edit-input" style="display:none;">
 										<p class="display-text">myusername</p>
-										<button id="toggleAccountEditBtn" class="btn btn-sm btn-outline-primary ms-2"
+										<button id="toggleAccountEditBtn" class="btn btn-sm btn-outline-secondary ms-2"
 											data-edit-text="修改帳號">修改帳號</button>
 									</div>
 								</div>
 
-								<div id="passwordSection" class="edit_block towline sectionHighlight">
+								<div id="passwordSection" class="inp_modle towline personal-info-section">
 									<label class="form-label">密碼</label>
 									<div class="d-flex align-items-center w-100">
 										<input type="email" value="a***************a" class="edit-input"
 											style="display:none;">
 										<p class="display-text">a***************a</p>
-										<button id="togglePasswordEditBtn" class="btn btn-sm btn-outline-primary ms-2"
+										<button id="togglePasswordEditBtn" class="btn btn-sm btn-outline-secondary ms-2"
 											data-edit-text="修改密碼">修改密碼</button>
 									</div>
 								</div>

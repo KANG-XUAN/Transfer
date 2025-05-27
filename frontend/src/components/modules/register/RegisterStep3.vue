@@ -4,8 +4,8 @@
     <h4>【參．想知道您的聯絡方式】</h4>
 
     <BaseInput 
-      inp_id="email" 
-      inp_type="email" 
+      type="email" 
+      id="email" 
       :label="message.inputLabel.email" 
       :placeholder="message.inputplahold.email" 
       :quote="message.quote.email"
@@ -14,8 +14,8 @@
       v-model="localForm.email" />
 
     <BaseInput 
-      inp_id="phone" 
-      inp_type="tel" 
+      type="tel" 
+      id="phone" 
       :label="message.inputLabel.phone" 
       :placeholder="message.inputplahold.phone" 
       :quote="message.quote.email"
