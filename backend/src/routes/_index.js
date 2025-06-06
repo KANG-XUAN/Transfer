@@ -13,5 +13,6 @@ router.use('/railwayDB', require('./db/railwayRoute'));
 // 各功能路由
 router.use('/api/captcha', require('./captcha'));
 router.use('/api/register', require('./registerRoute'));
+router.use('/api/login', require('./loginRoute'));
 
 module.exports = router;

@@ -16,4 +16,9 @@ switch (process.env.DB_TYPE) {
     throw new Error(`Unknown DB_TYPE: ${process.env.DB_TYPE}`);
 }
 
+// 顯示選擇的資料庫
+setTimeout(() => {
+  console.log(`【目前選用資料庫】 ${process.env.DB_TYPE}`);
+}, 2000);
+
 module.exports = db;
