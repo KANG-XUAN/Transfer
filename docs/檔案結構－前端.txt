@@ -1,56 +1,67 @@
-src
-├── assets            # 靜態資源 (圖片、CSS 等)
-│   ├── fonts         ## 字型資料夾
-│   │   └── wangfonts...
+src/
+├──📁assets/						【靜態資源 (圖片、CSS 等)】
+│   ├──📁fonts/							◎ 字型資料夾
+│   │   └── wangfonts.../
 │   │
-│   ├── images        ## 圖片資料夾
+│   ├──📁images/						◎ 圖片資料夾
 │   │   ├── test_back.png
 │   │   └── userAvatar_default.jpg
 │   │
-│   └── styles        ## 樣式檔案
-│       ├── base	  ### 都可導入
+│   └──📁styles/						◎ 樣式檔案
+│       ├──📁base/						└─	◇ 都可導入
 │       │   ├── font.css
+│       │   ├── general.css
 │       │   ├── main.css
 │       │   └── themes.css
 │       │
-│       └── pages	  ### 頁面專用
-│           ├── login.css
-│           ├── membersArea.css
-│           └── register.css
+│       └──📁pages/						└─	◇ page專用
+│           ├── loginPage.css
+│           ├── membersAreaPage.css
+│           └── registerPage.css
 │
-├── components        # 全局元件
+│
+├──📁components/					【全局元件】
+│   ├──📁areas/							◎ 區塊元件
+│   │   ├──📁login/						└─	◇ 登入區元件
+│   │   │   ├── InfoArea.vue
+│   │   │   └── QuoteArea.vue
+│   │   │
+│   │   ├──📁members/					└─	◇ 會員區元件
+│   │   │   ├── BookcaseArea.vue
+│   │   │   ├── PurchaseArea.vue
+│   │   │   └── SettingsArea.vue
+│   │   │
+│   │   ├──📁register/					└─	◇ 註冊區元件
+│   │   │   ├── AccountArea.vue
+│   │   │   ├── ContactArea.vue
+│   │   │   ├── InfoArea.vue
+│   │   │   └── ReviewArea.vue
+│   │   │
+│   │   ├── FooterArea.vue
+│   │   └── HeaderArea.vue
 │   │
-│   ├── common        ## 通用元件
+│   ├──📁common/						◎ 通用元件
 │   │   ├── AccessAlert.vue
-│   │   └── BaseInput.vue
+│   │   └── BuseInput.vue
 │   │
-│   ├── layout        ## 版面元件(預留還沒實作)
-│   │   ├── Footer.vue
-│   │   └── Header.vue
-│   │
-│   ├── modules       ## 區域元件
-│   │   │
-│   │   ├── members   ### 會員區元件
-│   │   │   └── MembersArea.vue
-│   │   │
-│   │   └── register  ### 註冊區元件
-│   │       ├── RegisterArea.vue
-│   │       ├── RegisterStep1.vue
-│   │       ├── RegisterStep2.vue
-│   │       ├── RegisterStep3.vue
-│   │       └── RegisterStep4.vue
-│   │
-│   └── Section       ## 區塊元件
-│       ├── LoginSection.vue
-│       └── WelcomeSection.vue
+│   └──📁page/							◎ 頁面元件
+│       ├── LoginPage.vue
+│       ├── LoginWelcomePage.vue
+│       ├── MembersPage.vue
+│       └── RegisterPage.vue
 │    
-├── router            # 路由配置
-│   └── index.js
 │
-├── views             # 頁面 (如 LoginPage、HomePage 等)
-│   ├── LoginPage.vue
-│   ├── MembersAreaPage.vue
-│   └── RegisterPage.vue
+├──📁router/						【路由配置】
+│   └── index.js			
+│			
+│			
+├──📁views/							【展示視窗】
+│   ├── LoginView.vue
+│   ├── AdminHomeView.vue
+│   ├── AdminView.vue
+│   ├── MembersView.vue
+│   └── RegisterView.vue
 │
-├── App.vue           # 根元件
-└── main.js           # 入口文件
+│
+├── App.vue				# 根元件
+└── main.js				# 入口文件
