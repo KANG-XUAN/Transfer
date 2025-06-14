@@ -1,18 +1,17 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 
-// 管理員可視
-import AdminHomeView from '@/views/AdminHomeView.vue';
-import AdminView from '@/views/AdminView.vue';
 
-// 會員可視
-import MembersView from '@/views/MembersView.vue';
-
-// 公共可視
+import AdminHomeView from '@/views/AdminHomeView.vue';	// 管理員可視
+import AdminView from '@/views/AdminView.vue';			// 管理員可視
 import ForgotPasswordView from '@/views/ForgotPasswordView.vue';
-import LoginView from '@/views/LoginView.vue';
-import RegisterView from '@/views/RegisterView.vue';
 import IndexView from '@/views/IndexView.vue';
+import LoginView from '@/views/LoginView.vue';
+import MembersView from '@/views/MembersView.vue';		// 會員可視
+import ProductsView from '@/views/ProductsView.vue';		// 會員可視
+import RegisterView from '@/views/RegisterView.vue';
+import ShoppingCartView from '@/views/ShoppingCartView.vue';
+
 
 import TestView from '@/views/TestView.vue';
 
@@ -50,6 +49,16 @@ const router = new Router({
 			path: '/members',
 			name: 'Members',
 			component: MembersView,
+		},
+		{
+			path: '/products',
+			name: 'Products',
+			component: ProductsView,
+		},
+		{
+			path: '/shoppingCart',
+			name: 'ShoppingCart',
+			component: ShoppingCartView,
 		},
 		{
 			path: '/admin/home',
