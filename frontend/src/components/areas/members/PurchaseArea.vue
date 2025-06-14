@@ -1,96 +1,115 @@
 <template>
-	<!-- 區塊：購買紀錄－始 -->
-	<div class="selectContent" id="purchase" style="display: none;">
-		<!-- <h5 class="mb-3">歷史訂單（僅展示效果，未實作。這段會刪掉）</h5> -->
-		<!-- 一筆訂單 -->
-		<div class="list-group mb-4">
-			<div class="list-group-item">
-				<div class="d-flex justify-content-between align-items-center">
-					<div>
-						<strong>訂單編號：</strong>#202405251234569<br>
-						<small>下單日期：2024-05-25</small>
-					</div>
-					<div>
-						<span class="badge bg-info">已下單</span>
-						<button class="btn btn-sm btn-outline-primary">查看明細</button>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- 一筆訂單 -->
-		<div class="list-group mb-4">
-			<div class="list-group-item">
-				<div class="d-flex justify-content-between align-items-center">
-					<div>
-						<strong>訂單編號：</strong>#202405211234569<br>
-						<small>出貨日期：2024-05-25</small>
-					</div>
-					<div>
-						<span class="badge bg-warning">運送中</span>
-						<button class="btn btn-sm btn-outline-primary">查看明細</button>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- 一筆訂單 -->
-		<div class="list-group mb-4">
-			<div class="list-group-item">
-				<div class="d-flex justify-content-between align-items-center">
-					<div>
-						<strong>訂單編號：</strong>#202405141234569<br>
-						<small>下單日期：2024-05-14</small><br>
-						<small>出貨日期：2024-05-19</small><br>
-						<small>結算日期：2024-05-24</small>
-					</div>
-					<div>
-						<span class="badge bg-success">已完成</span>
-						<button class="btn btn-sm btn-primary">查看明細</button>
-					</div>
-				</div>
-			</div>
-			<!-- 明細 -->
-			<div class="list-group-item">
-				<div class="d-flex justify-content-between align-items-center">
-					<div>
-						<p>春水遊鯉</p>
-						<p>冬日翠峰</p>
-						<p>秋山煙嵐</p>
-						<p>夏木幽亭</p>
-					</div>
-					<div>
-						<p>售價：399</p>
-						<p>售價：399</p>
-						<p>售價：399</p>
-						<p>售價：399</p>
-					</div>
-					<div>
-						<p>1本</p>
-						<p>1本</p>
-						<p>1本</p>
-						<p>1本</p>
-					</div>
-					<div>
-						<p>小計：399</p>
-						<p>小計：798</p>
-						<p>小計：1197</p>
-						<p>小計：1596</p>
-					</div>
-				</div>
-				<hr>
-				<div class="d-flex justify-content-end align-items-center">
-					<div>
-						<p>折扣：-0</p>
-						<p>總計：1596</p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- 更多訂單 -->
-	</div>
+  <div class="selectContent" id="purchase">
+    <!-- 有訂單時 -->
+    <div class="list-group mb-4" v-if="orders.length">
+      <div class="list-group-item mb-2" v-for="order in orders" :key="order.id">
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+            <strong>訂單編號：</strong>#{{ order.id }}<br />
+            <small class="text-muted">下單日期：{{ formatDate(order.created_at) }}</small>
+          </div>
+          <div class="text-end">
+            <span :class="['badge', 'bg-' + statusColor(order.status)]">
+              {{ order.status }}
+            </span>
+            <button class="btn btn-sm btn-outline-primary ms-2" data-bs-toggle="collapse"
+              :data-bs-target="'#collapse' + order.id" aria-expanded="false" :aria-controls="'collapse' + order.id"
+              @click="toggleCollapse(order.id)">
+              {{ collapsedOrders.includes(order.id) ? '收起明細' : '查看明細' }}
+            </button>
+          </div>
+        </div>
+
+        <!-- 摺疊明細 -->
+        <div :id="'collapse' + order.id" class="collapse mt-4">
+          <div class="d-flex justify-content-between flex-wrap" v-for="(item, index) in order.details" :key="index">
+            <div>{{ item.name }}</div>
+            <div>售價：{{ item.price }}</div>
+            <div>{{ item.qty }}本</div>
+            <div>小計：{{ item.subtotal }}</div>
+          </div>
+          <hr />
+          <div class="text-end">
+            <strong>總計：{{ order.total }}</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 沒有訂單時 -->
+    <div v-else class="alert alert-secondary text-center">
+      目前沒有任何訂單紀錄。
+    </div>
+  </div>
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
-	name: "PurchaseArea",
+  name: 'PurchaseArea',
+  data() {
+    return {
+      orders: [],
+      collapsedOrders: []
+    };
+  },
+  created() {
+    this.fetchOrders();
+  },
+  methods: {
+    fetchOrders() {
+      axios
+        .get('http://localhost:3000/api/orders-all')
+        .then((res) => {
+          // 從 res.data.data 取訂單清單
+          this.orders = res.data.data || [];
+        })
+        .catch((err) => {
+          console.error('取得訂單失敗', err);
+        });
+    },
+    formatDate(dateStr) {
+      const date = new Date(dateStr);
+      date.setHours(date.getHours() + 8); // 調整為台灣時間
+      return date.toISOString().slice(0, 10); // 格式：YYYY-MM-DD
+    },
+    toggleCollapse(orderId) {
+      if (this.collapsedOrders.includes(orderId)) {
+        this.collapsedOrders = this.collapsedOrders.filter((id) => id !== orderId);
+      } else {
+        this.collapsedOrders.push(orderId);
+      }
+    },
+    statusColor(status) {
+      switch (status) {
+        case 'pending':
+          return 'warning';
+        case 'shipped':
+          return 'info';
+        case 'settled':
+          return 'success';
+        case 'cancelled':
+          return 'secondary';
+        default:
+          return 'light';
+      }
+    }
+  }
 };
 </script>
+
+<style scoped>
+#purchase {
+  padding: 20px;
+
+  .collapse,
+  .collapsing {
+    hr {
+      margin: 10px 0;
+    }
+
+  }
+
+}
+</style>

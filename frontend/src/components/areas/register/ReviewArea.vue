@@ -47,7 +47,6 @@
 </template>
 
 <script>
-import axios from 'axios';
 import BaseInput from '@/components/common/BaseInput.vue';
 
 export default {
@@ -96,8 +95,8 @@ export default {
   computed: {
     genderText() {
       switch (this.form.gender) {
-        case 'male': return '男';
-        case 'female': return '女';
+        case 'male': return '男性';
+        case 'female': return '女性';
         case 'hidden': return '隱藏';
         default: return '未選擇';
       }
@@ -105,8 +104,10 @@ export default {
   },
   methods: {
     async validateForm() {
+      // return true;
       try {
-        const res = await axios.post('http://localhost:3000/api/captcha/verify', {
+        // const res = await axios.post('http://localhost:3000/api/captcha/verify', {
+        const res = await this.$axios.post('/api/captcha/verify', {
           captcha: this.message.captch.input
         }, {
           withCredentials: true
@@ -128,15 +129,18 @@ export default {
 
     refreshCaptcha() {
       // 更新圖片連結並加時間戳避免快取
-      this.message.captch.image = `http://localhost:3000/api/captcha?t=${Date.now()}`;
+      // this.$apiBaseUrl 在 main.js 中
+      this.message.captch.image = `${this.$apiBaseUrl}/api/captcha?t=${Date.now()}`;
     },
 
     reloadCaptcha() {
       // 點擊圖片換圖
       this.refreshCaptcha();
     },
+    
     submitCaptcha() {
-      axios.post('http://localhost:3000/api/captcha/verify', {
+      // axios.post('http://localhost:3000/api/captcha/verify', {
+      this.$axios.post('/api/captcha/verify', {
         captcha: this.message.captch.input
       }, {
         withCredentials: true  // 🔑 讓 session cookie 被帶上
@@ -172,7 +176,7 @@ export default {
   /* 暱稱 */
   h5 {
     font-size: 36px;
-    font-family: "王翰宗粗鋼體";
+    font-family: "標楷體";
     color: var(--main-color);
     text-align: center;
     margin-bottom: 0;

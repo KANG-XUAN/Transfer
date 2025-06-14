@@ -1,9 +1,12 @@
-// src/middlewares/cors.js
+// backend/src/middlewares/cors.js
+
 const cors = require('cors');
 
 const allowedOrigins = [
   'http://localhost:8080',
-  'http://127.0.0.1:5500'
+  'http://127.0.0.1:8081',
+  'http://127.0.0.1:5500',
+  'https://chu-frontend-production.up.railway.app'
 ];
 
 const corsOptions = {

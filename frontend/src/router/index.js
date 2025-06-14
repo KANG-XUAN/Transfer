@@ -1,12 +1,21 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 
-import AdminView from '@/views/AdminView.vue';
+// 管理員可視
 import AdminHomeView from '@/views/AdminHomeView.vue';
-import LoginView from '@/views/LoginView.vue';
+import AdminView from '@/views/AdminView.vue';
+
+// 會員可視
 import MembersView from '@/views/MembersView.vue';
+
+// 公共可視
+import ForgotPasswordView from '@/views/ForgotPasswordView.vue';
+import LoginView from '@/views/LoginView.vue';
 import RegisterView from '@/views/RegisterView.vue';
+import IndexView from '@/views/IndexView.vue';
+
 import TestView from '@/views/TestView.vue';
+
 
 Vue.use(Router);
 
@@ -15,17 +24,22 @@ const router = new Router({
 	routes: [
 		{	// 錯誤導向
 			path: '*',	
-			redirect: '/login',
+			redirect: '/index',
 		},
 		{	// 根目錄(開啟位置)
 			path: '/',	
-			name: 'LoginAlt',
-			component: LoginView,
+			name: 'myIndex',
+			component: IndexView,
 		},
 		{
 			path: '/login',
 			name: 'Login',
 			component: LoginView,
+		},
+		{
+			path: '/forgot-password',
+			name: 'ForgotPassword',
+			component: ForgotPasswordView,
 		},
 		{
 			path: '/register',
@@ -56,7 +70,7 @@ const router = new Router({
 	],
 });
 
-// ✅ 加入導航守衛
+// ✅ 加入導航守衛(管理者未應用)
 router.beforeEach((to, from, next) => {
 	if (to.meta.requiresAdmin) {
 		const isAdmin = localStorage.getItem('isAdmin');
@@ -69,5 +83,20 @@ router.beforeEach((to, from, next) => {
 		next(); // 不需要權限，直接進入
 	}
 });
+
+// 會員需登入
+// router.beforeEach((to, from, next) => {
+//   const token = localStorage.getItem('token');
+//   if (to.path === '/members' && !token) {
+//     // 攔截未登入訪問會員頁，跳轉登入頁
+//     if (confirm('尚未登入，是否前往登入頁？')) {
+//       next('/login');
+//     } else {
+//       next(false); // 取消跳轉，停留原頁
+//     }
+//   } else {
+//     next(); // 其他路由照常
+//   }
+// });
 
 export default router;
